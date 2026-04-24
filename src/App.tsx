@@ -17,7 +17,7 @@ export default function App() {
         <p className="eyebrow">⚠️ Seguridad en aplicaciones</p>
         <h1>🚨 No debes exponer estos datos!!</h1>
         <p className="hero-copy">
-          Esta página demuestra cómo los secretos pueden quedar expuestos en aplicaciones frontend.
+          Esta página demuestra cómo los secretos pueden quedar expuestos en aplicaciones frontend. :3
         </p>
       </section>
 
