@@ -3,45 +3,76 @@ import "./styles.css";
 const environment = import.meta.env.VITE_PUBLIC_ENVIRONMENT || "local";
 const version = import.meta.env.VITE_PUBLIC_VERSION || "dev-local";
 
-const notes = [
-  "Pipeline de calidad activo",
-  "Promoción controlada de develop a staging",
-  "Despliegue de staging en GitHub Pages",
-  "Cambio visible desde develop"
+const exposedSecrets = [
+  { key: "DB_PASSWORD", value: "pass123" },
+  { key: "JWT_TOKEN", value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." },
+  { key: "API_KEY", value: "51H8fakEXAMPLE123456789abcdef" },
+  { key: "JWT_SECRET", value: "my_super_secret_key_123" }
 ];
 
 export default function App() {
   return (
-    <main className="shell">
-      <section className="hero">
-        <p className="eyebrow">Laboratorio 1 · Despliegue con GitHub</p>
-        <h1>Release Board V1</h1>
+    <main className="shell dark">
+      <section className="hero danger">
+        <p className="eyebrow">⚠️ Seguridad en aplicaciones</p>
+        <h1>🚨 No debes exponer estos datos!!</h1>
         <p className="hero-copy">
-          Aplicación mínima para practicar pipeline, despliegue y promoción entre entornos.
+          Esta página demuestra cómo los secretos pueden quedar expuestos en aplicaciones frontend.
         </p>
+      </section>
+
+      <section className="alert-box">
+        <p>
+          Esta información contiene credenciales sensibles. Exponer estos datos puede comprometer tu aplicación y tus usuarios.
+        </p>
+      </section>
+
+      <section className="grid">
+        <article className="card image-card">
+          <img
+          className="warning-image"
+          src="https://m.media-amazon.com/images/M/MV5BYTNmOTUxNzItZTE0Ny00NTM0LWEzYWQtMjMxOWU5Zjk4NDAyXkEyXkFqcGc@._V1_.jpg"
+          alt="warning"
+          />
+        </article>
+
+        <article className="card">
+          <h2>Secrets expuestos</h2>
+          <table className="secrets-table">
+            <thead>
+              <tr>
+                <th>Clave</th>
+                <th>Valor expuesto</th>
+              </tr>
+            </thead>
+            <tbody>
+              {exposedSecrets.map((item) => (
+                <tr key={item.key}>
+                  <td className="danger-text">{item.key}</td>
+                  <td className="mono">{item.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </article>
       </section>
 
       <section className="grid">
         <article className="card card-accent">
           <h2>Entorno actual</h2>
           <p className="badge">{environment}</p>
-          <p>Este valor cambia en cada build y nos ayuda a verificar qué entorno estamos viendo.</p>
         </article>
 
         <article className="card">
-          <h2>Versión visible</h2>
+          <h2>Versión</h2>
           <p className="mono">{version}</p>
-          <p>Usaremos el SHA corto del commit para identificar qué versión llegó a staging.</p>
         </article>
+      </section>
 
-        <article className="card">
-          <h2>Qué estamos practicando</h2>
-          <ul>
-            {notes.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
+      <section className="footer-warning">
+        <p>
+          Riesgos: acceso no autorizado, robo de identidad, pérdida de datos y compromiso total del sistema.
+        </p>
       </section>
     </main>
   );

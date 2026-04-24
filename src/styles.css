@@ -31,6 +31,10 @@ body {
   margin-bottom: 24px;
 }
 
+.hero.danger h1 {
+  color: #ff4d4f;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -90,4 +94,53 @@ h1 {
 ul {
   padding-left: 18px;
   margin-bottom: 0;
+}
+
+/* 🔴 NUEVO: estilos de seguridad */
+
+.alert-box {
+  background: rgba(127, 29, 29, 0.25);
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.danger-text {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* 🖼️ Ajuste de imagen */
+.warning-image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* tabla */
+.secrets-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.secrets-table th,
+.secrets-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* footer warning */
+.footer-warning {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(127, 29, 29, 0.25);
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  border-radius: 12px;
 }
