@@ -15,7 +15,7 @@ export default function App() {
     <main className="shell dark">
       <section className="hero danger">
         <p className="eyebrow">⚠️ Seguridad en aplicaciones</p>
-        <h1>🚨 No debes exponer estos datos!!!</h1>
+        <h1>🚨 No debes exponer estos datos!!</h1>
         <p className="hero-copy">
           Esta página demuestra cómo los secretos pueden quedar expuestos en aplicaciones frontend. :3
         </p>
